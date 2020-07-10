@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Game Tutorial OST.wav-97d414362a4e180f67e8eccd4cce410b.sample"
+
+[deps]
+
+source_file="res://src/Sounds/Game Tutorial OST.wav"
+dest_files=[ "res://.import/Game Tutorial OST.wav-97d414362a4e180f67e8eccd4cce410b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
