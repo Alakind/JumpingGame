@@ -4,11 +4,19 @@ extends Actor
 var last_direction: = 1
 var check_jumping: = 1.0
 var steps_playing: = false
-		
+var is_dead = false
+
 func _physics_process(delta: float) -> void:
-	var direction: = get_directions()
-	_velocity = calculate_velocity(_velocity, direction, speed)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	if !is_dead:
+		var direction: = get_directions()
+		_velocity = calculate_velocity(_velocity, direction, speed)
+		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	
+# Убивает любою касание врага, но необходимо поменять функцию dead(), убрать таймер
+#	if get_slide_count() > 0:
+#		for i in range(get_slide_count()):
+#			if "Enemy" in get_slide_collision(i).collider.name:
+#				dead()
 	
 	
 	
@@ -42,6 +50,13 @@ func get_directions() -> Vector2:
 		steps_playing = true
 	return Vector2(last_direction, check_jumping)
 
+func dead():
+	is_dead =true
+	_velocity = Vector2(0, -100)
+	$AnimatedSprite.play(("Dead"))
+	#$CollisionShape2D.set_deferred("disabled", true)
+	$Timer.start()
+
 func calculate_velocity(
 	linear_velocity: Vector2,
 	direction: Vector2,
@@ -53,3 +68,6 @@ func calculate_velocity(
 	if direction.y == -1.0:
 		out.y = speed.y * direction.y
 	return out
+
+func _on_Timer_timeout() -> void:
+	get_tree().reload_current_scene()

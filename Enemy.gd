@@ -3,6 +3,8 @@ extends Actor
 
 var direction = 1
 var is_dead = false
+var is_attacking = false
+
 func _ready():
 	_velocity.x = -speed.x
 	
@@ -19,6 +21,16 @@ func _physics_process(delta):
 	if !is_dead:
 		var music_node_steps = $"Sound of steps"
 		_velocity.y += gravity * delta
+		
+		#Убивает, только если враг лицом
+		if get_slide_count() > 0:
+			for i in range(get_slide_count()):
+				if "Player" in get_slide_collision(i).collider.name:
+					is_attacking = true
+					$AnimatedSprite.play("attack")
+					$"Timer for attack".start()
+					get_slide_collision(i).collider.dead()
+					
 		if is_on_wall():
 			_velocity.x *= -1.0
 			direction *= -1
@@ -32,9 +44,15 @@ func _physics_process(delta):
 		_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 		$AnimatedSprite.flip_h = direction == 1
 		music_node_steps.play()
-		$AnimatedSprite.play("run")
+		
+		if !is_attacking:
+			$AnimatedSprite.play("run")
 	
 
 
 func _on_Timer_timeout() -> void:
 	queue_free()
+
+
+func _on_Timer_for_attack_timeout() -> void:
+	is_attacking = false

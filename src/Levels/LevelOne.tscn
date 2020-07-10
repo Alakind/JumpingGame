@@ -457,10 +457,11 @@ position = Vector2( 191.8, 281.71 )
 speed = Vector2( 200, 650 )
 
 [node name="Gun" parent="Player" instance=ExtResource( 22 )]
+visible = false
 position = Vector2( -16.2555, 17.7361 )
 collision_layer = 1
 fire_rate = 0.3
 
 [node name="Enemy" parent="." instance=ExtResource( 21 )]
-position = Vector2( 565.726, 219.225 )
+position = Vector2( 978.726, 252.225 )
 speed = Vector2( 100, 1000 )
