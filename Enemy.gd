@@ -28,6 +28,7 @@ func _physics_process(delta):
 				if "Player" in get_slide_collision(i).collider.name:
 					is_attacking = true
 					$AnimatedSprite.play("attack")
+					_velocity.x = 0
 					$"Timer for attack".start()
 					get_slide_collision(i).collider.dead()
 					
@@ -40,9 +41,12 @@ func _physics_process(delta):
 			_velocity.x *= -1.0
 			direction *= -1
 			$RayCast2D.position.x *= -1
-			
+
+
 		_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-		$AnimatedSprite.flip_h = direction == 1
+
+		if not is_attacking:
+			$AnimatedSprite.flip_h = direction == 1
 		music_node_steps.play()
 		
 		if !is_attacking:
@@ -56,3 +60,5 @@ func _on_Timer_timeout() -> void:
 
 func _on_Timer_for_attack_timeout() -> void:
 	is_attacking = false
+	_velocity.x = speed.x
+	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
