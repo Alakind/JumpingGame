@@ -96,8 +96,9 @@ extents = Vector2( 14.9761, 24.9015 )
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
-collision_mask = 2
+collision_mask = 3
 script = ExtResource( 2 )
+speed = Vector2( 200, 650 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -16.4593, 12.4615 )
@@ -123,15 +124,13 @@ smoothing_speed = 4.0
 [node name="Soundtrack" type="AudioStreamPlayer" parent="Auido Effect"]
 stream = ExtResource( 45 )
 volume_db = -3.029
-autoplay = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Auido Effect"]
-stream = ExtResource( 44 )
-volume_db = -1.01
 
 [node name="Sound of jump" type="AudioStreamPlayer" parent="Auido Effect"]
 stream = ExtResource( 46 )
 volume_db = -1.01
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="Auido Effect"]
+stream = ExtResource( 44 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

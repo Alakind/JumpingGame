@@ -1,22 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Background/Menu.png" type="Texture" id=1]
-[ext_resource path="res://src/Background/unnamed.png" type="Texture" id=2]
+[ext_resource path="res://src/Menu/ContinueButton.jpg" type="Texture" id=1]
+[ext_resource path="res://src/Menu/LevelsButton.jpg" type="Texture" id=2]
+[ext_resource path="res://src/Menu/BackgroundForMainMenu.jpg" type="Texture" id=3]
+[ext_resource path="res://TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://src/Menu/LevelsButtonSelected.jpg" type="Texture" id=5]
+[ext_resource path="res://src/Menu/ContinueButtonSelected.jpg" type="Texture" id=6]
 
 [node name="TitleScreen" type="Node"]
+script = ExtResource( 4 )
 
 [node name="Menu" type="Sprite" parent="."]
-position = Vector2( 515.645, 318.221 )
-scale = Vector2( 0.89749, 0.89749 )
-texture = ExtResource( 1 )
+position = Vector2( 512.849, 339.263 )
+scale = Vector2( 0.398651, 0.373212 )
+texture = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.58667
-margin_top = 3.17334
-margin_right = 1.58667
-margin_bottom = 3.17334
+margin_left = 23.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = 76.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 20
 custom_constants/margin_left = 0
@@ -26,31 +31,47 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 512.0
-margin_top = 20.0
-margin_right = 512.0
-margin_bottom = 580.0
+margin_left = 213.0
+margin_top = 73.0
+margin_right = 783.0
+margin_bottom = 594.0
 size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 570.0
+margin_bottom = 521.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 570.0
+margin_bottom = 254.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource( 1 )
+texture_focused = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TextureRect"]
-margin_left = -156.0
-margin_top = 87.3335
-margin_right = 164.0
-margin_bottom = 275.333
+[node name="LevelsButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 270.0
+margin_right = 570.0
+margin_bottom = 521.0
 texture_normal = ExtResource( 2 )
+texture_focused = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
