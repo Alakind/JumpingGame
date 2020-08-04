@@ -5,6 +5,7 @@ var last_direction: = 1
 var check_jumping: = 1.0
 var steps_playing: = false
 var is_dead = false
+var just_killed = false
 
 func _physics_process(delta: float) -> void:
 	if !is_dead:
@@ -30,7 +31,7 @@ func get_directions() -> Vector2:
 		$AnimatedSprite.play("Run")
 		$AnimatedSprite.flip_h = last_direction == -1 
 		
-	if ( Input.is_action_just_pressed("jump") and is_on_floor() ) or ( is_on_wall() and not is_on_floor()):
+	if ( Input.is_action_just_pressed("jump") and is_on_floor() ) or ( is_on_wall() and not is_on_floor()) or just_killed == true:
 		check_jumping = -1.0
 		music_node_steps.stop()
 		steps_playing = false
@@ -67,6 +68,7 @@ func calculate_velocity(
 	out.y += gravity * get_physics_process_delta_time()
 	if direction.y == -1.0:
 		out.y = speed.y * direction.y
+	just_killed = false
 	return out
 
 func _on_Timer_timeout() -> void:
