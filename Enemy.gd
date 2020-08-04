@@ -60,5 +60,5 @@ func _on_Timer_timeout() -> void:
 
 func _on_Timer_for_attack_timeout() -> void:
 	is_attacking = false
-	_velocity.x = speed.x
+	_velocity.x = speed.x * -direction
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
