@@ -15,8 +15,18 @@ func dead():
 	$AnimatedSprite.play("dead")
 	$CollisionShape2D.disabled = true
 	$Timer.start()
-	
-	
+
+# Killing enemy by stomping
+func _on_Stomping_area_body_entered(body):
+	# If enemy is lower
+	if body.global_position.y < get_node("Stomping_area").global_position.y:
+		dead()
+		body.just_killed = true
+		#body.music_node_steps.stop()
+		#body.steps_playing = false
+		#body.music_node_jumps.play()
+		$AnimatedSprite.play("Jump")
+
 func _physics_process(delta):
 	if !is_dead:
 		var music_node_steps = $"Sound of steps"
@@ -62,3 +72,4 @@ func _on_Timer_for_attack_timeout() -> void:
 	is_attacking = false
 	_velocity.x = speed.x * -direction
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+
