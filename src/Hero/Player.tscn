@@ -26,7 +26,6 @@
 [ext_resource path="res://src/Sounds/345560__inspectorj__footsteps-stones-a.wav" type="AudioStream" id=44]
 [ext_resource path="res://src/Sounds/Jump.wav" type="AudioStream" id=46]
 
-
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 5 )
@@ -136,33 +135,31 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 14.9761, 24.9015 )
+extents = Vector2( 60.5803, 100.258 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
 collision_mask = 3
 script = ExtResource( 2 )
-gravity = 3100.0
-speed = Vector2( 164, 700 )
+gravity = 12400.0
+speed = Vector2( 200, 1000 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -13.9383, 17.5035 )
-scale = Vector2( 0.257825, 0.257825 )
+scale = Vector2( 0.965296, 0.965296 )
 frames = SubResource( 18 )
 animation = "Dead"
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -16.0094, 16.6367 )
+position = Vector2( -8.48761, -13.3377 )
 shape = SubResource( 19 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 10.7924, -160.895 )
-scale = Vector2( 0.72, 1 )
-offset = Vector2( 0, 100 )
+offset = Vector2( 0, -300 )
 current = true
-zoom = Vector2( 0.7, 0.7 )
+zoom = Vector2( 2, 2 )
 limit_left = 10
 limit_right = 3400
 smoothing_enabled = true

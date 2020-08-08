@@ -7,8 +7,8 @@ onready var mapscene_GUI = get_node("../GUI")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var used_tiles = get_used_cells_by_id(0)
-	var delete_tiles = get_used_cells_by_id(1)
+	var used_tiles = get_used_cells_by_id(1)
+	var delete_tiles = get_used_cells_by_id(0)
 	
 	for tile in used_tiles:
 		var area_instance = button_area.instance()
@@ -24,8 +24,10 @@ func _ready() -> void:
 		area_instance.tile_region = get_cell_autotile_coord(tile[0], tile[1])
 		add_child(area_instance)
 	
-	var tiles = get_tree().get_nodes_in_group("DoorArea")
-	for area in get_tree().get_nodes_in_group("ButtonArea"):
-		area.connect("body_entered", mapscene_GUI, "OnButtonAreaEntered", [tiles[0].tile, tiles[0].tile_region, tiles[0]])
+	var doors = get_tree().get_nodes_in_group("DoorArea")
+	var buttons = get_tree().get_nodes_in_group("ButtonArea")
+	for area in buttons:
+		area.connect("body_entered", mapscene_GUI, "OnButtonAreaEntered", [doors[0].tile, doors[0].tile_region, doors[0]])
 		area.connect("body_exited", mapscene_GUI, "OnButtonAreaExited")
+		
 
