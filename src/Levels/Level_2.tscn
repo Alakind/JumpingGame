@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://src/1 Tiles/Tile_26.png" type="Texture" id=1]
 [ext_resource path="res://src/1 Tiles/Tile_01.png" type="Texture" id=2]
@@ -12,12 +12,16 @@
 [ext_resource path="res://src/1 Tiles/Tile_32.png" type="Texture" id=10]
 [ext_resource path="res://src/1 Tiles/Tile_34.png" type="Texture" id=11]
 [ext_resource path="res://src/1 Tiles/Tile_56.png" type="Texture" id=12]
-[ext_resource path="res://src/Tile_02.png" type="Texture" id=13]
+[ext_resource path="res://src/1 Tiles/Tile_02.png" type="Texture" id=13]
 [ext_resource path="res://src/1 Tiles/Tile_03.png" type="Texture" id=14]
 [ext_resource path="res://src/1 Tiles/Tile_47.png" type="Texture" id=15]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Enemy first/Enemy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Hero/Player.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Levels/Next_level.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Levels/Death_by_fall.tscn" type="PackedScene" id=19]
+
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -417,3 +421,6 @@ speed = Vector2( 200, 700 )
 
 [node name="Next_level" parent="." instance=ExtResource( 18 )]
 position = Vector2( 845.284, 930.814 )
+
+[node name="Death_by_fall" parent="." instance=ExtResource( 19 )]
+position = Vector2( 495.198, 1088.57 )

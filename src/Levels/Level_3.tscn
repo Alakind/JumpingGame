@@ -9,7 +9,7 @@
 [ext_resource path="res://src/1 Tiles/Tile_26.png" type="Texture" id=7]
 [ext_resource path="res://src/1 Tiles/Tile_54.png" type="Texture" id=8]
 [ext_resource path="res://src/1 Tiles/Tile_47.png" type="Texture" id=9]
-[ext_resource path="res://src/Tile_02.png" type="Texture" id=10]
+[ext_resource path="res://src/1 Tiles/Tile_02.png" type="Texture" id=10]
 [ext_resource path="res://src/1 Tiles/Tile_12.png" type="Texture" id=11]
 [ext_resource path="res://src/1 Tiles/Tile_16.png" type="Texture" id=12]
 [ext_resource path="res://src/1 Tiles/Tile_03.png" type="Texture" id=13]
@@ -18,9 +18,11 @@
 [ext_resource path="res://src/1 Tiles/Tile_34.png" type="Texture" id=16]
 [ext_resource path="res://src/1 Tiles/Tileset.png" type="Texture" id=17]
 [ext_resource path="res://src/Levels/GUI.gd" type="Script" id=18]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Hero/Player.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/Objects/Interactable/Sprites/Button/Button0000.png" type="Texture" id=20]
 [ext_resource path="res://src/Objects/Interactable/Sprites/Button/Button0001.png" type="Texture" id=21]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )

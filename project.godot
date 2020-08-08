@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://Actor.gd"
+"path": "res://src/Scripts/Actor.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://StateMachine.gd"
+"path": "res://src/Scripts/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FirstTry"
-run/main_scene="res://TitleScreen.tscn"
+run/main_scene="res://src/Menu/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/1 Tiles/Tile_55.png" type="Texture" id=1]
 [ext_resource path="res://src/1 Tiles/Tile_54.png" type="Texture" id=2]
-[ext_resource path="res://src/Tile_02.png" type="Texture" id=3]
+[ext_resource path="res://src/1 Tiles/Tile_02.png" type="Texture" id=3]
 [ext_resource path="res://src/1 Tiles/Tile_33.png" type="Texture" id=4]
 [ext_resource path="res://src/1 Tiles/Tile_32.png" type="Texture" id=5]
 [ext_resource path="res://src/1 Tiles/Tile_12.png" type="Texture" id=6]
@@ -15,8 +15,10 @@
 [ext_resource path="res://src/1 Tiles/Tile_34.png" type="Texture" id=13]
 [ext_resource path="res://src/1 Tiles/Tile_56.png" type="Texture" id=14]
 [ext_resource path="res://src/1 Tiles/Tile_47.png" type="Texture" id=15]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Hero/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Levels/Next_level.tscn" type="PackedScene" id=17]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
