@@ -113,11 +113,6 @@ region = Rect2( 256, 768, 256, 256 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 16.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Falling",
@@ -128,6 +123,11 @@ animations = [ {
 "name": "Jump",
 "speed": 21.0
 }, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 16.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "Run",
@@ -135,7 +135,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 60.5803, 100.258 )
+extents = Vector2( 52.4142, 81.3696 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -143,7 +143,7 @@ extents = Vector2( 60.5803, 100.258 )
 collision_mask = 3
 script = ExtResource( 2 )
 gravity = 12400.0
-speed = Vector2( 200, 1000 )
+speed = Vector2( 750, 2750 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.965296, 0.965296 )
@@ -152,16 +152,16 @@ animation = "Dead"
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -8.48761, -13.3377 )
+position = Vector2( -5.65912, 6.46126 )
 shape = SubResource( 19 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 10.7924, -160.895 )
-offset = Vector2( 0, -300 )
+offset = Vector2( 0, 100 )
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = 10
-limit_right = 3400
+limit_right = 100000000
 smoothing_enabled = true
 smoothing_speed = 7.0
 

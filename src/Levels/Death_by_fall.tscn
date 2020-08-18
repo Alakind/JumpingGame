@@ -2,9 +2,8 @@
 
 [ext_resource path="res://src/Scripts/Death_by_fall.gd" type="Script" id=1]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 485.127, 58.5299 )
+extents = Vector2( 2264.57, 58.5299 )
 
 [node name="Death_by_fall" type="Sprite"]
 script = ExtResource( 1 )
