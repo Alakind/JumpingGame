@@ -25,3 +25,10 @@ func OnButtonAreaEntered(body, tile_import, tile_region_import, area_import_door
 		
 func OnButtonAreaExited(body):
 	print("out")
+
+
+func _on_TextureButton_pressed() -> void:
+	if (get_tree().paused == false):
+		get_tree().paused = true
+	elif (get_tree().paused == true):
+		get_tree().paused = false
