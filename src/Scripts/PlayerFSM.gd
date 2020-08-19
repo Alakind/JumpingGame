@@ -6,6 +6,7 @@ func _ready():
 	add_state("fall")
 	add_state("dead")
 	add_state("attack")
+	add_state("wall_jump")
 	call_deferred("set_state", states.run)
 	
 func _input(event):
@@ -17,13 +18,14 @@ func _input(event):
 	if [states.jump, states.fall].has(state):
 		parent.direction.y = 1.0
 		
-	if parent.is_on_wall() and not parent.is_on_floor():
+	if [states.wall_jump].has(state):
 		parent.direction.y = -1.0
 		
 func _state_logic(delta):
-	parent._handle_move_input()
-	#parent._apply_gravity(delta)
-	parent._apply_movement()
+	if ![states.dead].has(state):
+		parent._handle_move_input()
+		#parent._apply_gravity(delta)
+		parent._apply_movement()
 	
 func _get_transition(delta):
 	match state:
@@ -47,13 +49,16 @@ func _get_transition(delta):
 				return states.fall
 
 		states.fall:
-			if parent.is_on_floor():
+			if parent.is_dead:
+				return states.dead
+			elif parent.is_on_floor():
 				return states.run
 			elif parent.is_on_wall():
 				parent.direction.y = -1.0
 			elif parent._velocity.y < 0:
 				return states.jump
-			elif parent.is_dead:
+		states.wall_jump:
+			if parent.is_dead:
 				return states.dead
 	return null
 	
@@ -65,6 +70,9 @@ func _enter_state(new_state, old_state):
 		states.jump:
 			parent.anim_player.play("Jump")
 			print("Jump")
+		states.wall_jump:
+			parent.anim_player.play("Wall_jump")
+			print("Wall Jump")
 		states.fall:
 			parent.anim_player.play("Fall")
 			print("Fall")

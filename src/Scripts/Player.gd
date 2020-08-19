@@ -38,4 +38,3 @@ func _on_Timer_timeout() -> void:
 
 func dead():
 	is_dead = true
-	_velocity = Vector2(0, 0)
