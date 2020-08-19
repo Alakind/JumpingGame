@@ -4,6 +4,9 @@ var is_dead = false
 var just_killed = false
 var direction = Vector2(1, 0)
 var is_jumping = false
+export var wall_jump_speed = Vector2(800.0, 2800.0)
+var is_wall_jump = false
+
 onready var anim_player = get_node("AnimatedSprite")
 onready var timer = get_node("Timer")
 onready var collider = get_node("CollisionShape2D")
@@ -12,7 +15,10 @@ func _apply_gravity(delta):
 	_velocity.y += gravity * delta
 
 func _apply_movement():
-	_velocity = calculate_velocity(_velocity, direction, speed)
+	if !is_wall_jump:
+		_velocity = calculate_velocity(_velocity, direction, speed)
+	else:
+		_velocity = calculate_velocity(_velocity, direction, wall_jump_speed)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 
 func _handle_move_input():
