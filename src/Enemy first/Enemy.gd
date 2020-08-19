@@ -14,6 +14,8 @@ func dead():
 	_velocity.x = 0
 	$AnimatedSprite.play("dead")
 	$CollisionShape2D.disabled = true
+	$Stomping_area/CollisionShape2D.disabled = true
+	$RayCast2D.enabled = false
 	$Timer.start()
 
 # Killing enemy by stomping
