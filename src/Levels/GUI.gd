@@ -20,7 +20,7 @@ func OnButtonAreaEntered(body, tile_import, tile_region_import, area_import_door
 		print("pressed")
 		action_state = "Press"
 		tile = tile_import
-		tile_region = tile_region_import + Vector2(0, -1)
+		tile_region = tile_region_import + Vector2(0, 1)
 		button_area = area_import_door
 		
 func OnButtonAreaExited(body):
