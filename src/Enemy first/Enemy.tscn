@@ -48,7 +48,6 @@
 [ext_resource path="res://src/Enemy first/Attacking/Golem_01_Attacking_010.png" type="Texture" id=46]
 [ext_resource path="res://src/Enemy first/Attacking/Golem_01_Attacking_011.png" type="Texture" id=47]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2725, 24.9015 )
 
@@ -59,15 +58,15 @@ animations = [ {
 "name": "run",
 "speed": 26.0
 }, {
-"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 46 ), ExtResource( 47 ) ],
-"loop": false,
-"name": "attack",
-"speed": 50.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 23 ), ExtResource( 30 ), ExtResource( 34 ) ],
 "loop": false,
 "name": "dead",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": false,
+"name": "attack",
+"speed": 50.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
