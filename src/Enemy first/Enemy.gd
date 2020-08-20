@@ -59,11 +59,7 @@ func _physics_process(delta):
 
 		if not is_attacking:
 			$AnimatedSprite.flip_h = direction == 1
-		music_node_steps.play()
-		
-		if !is_attacking:
 			$AnimatedSprite.play("run")
-	
 
 
 func _on_Timer_timeout() -> void:

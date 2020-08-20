@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Levels/Interactables.gd" type="Script" id=1]
 [ext_resource path="res://src/1 Tiles/tilesett.png" type="Texture" id=2]
 [ext_resource path="res://src/Enemy first/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Levels/Death_by_fall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Levels/GUI.gd" type="Script" id=18]
 [ext_resource path="res://src/Hero/Player.tscn" type="PackedScene" id=19]
 
@@ -172,7 +173,7 @@ tile_data = PoolIntArray( -65533, 1, 0, 7, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 19 )]
-position = Vector2( 317.328, 119.958 )
+position = Vector2( 2781.33, -1052.04 )
 gravity = 12400.0
 speed = Vector2( 750, 2750 )
 wall_jump_speed = Vector2( 800, 3000 )
@@ -186,3 +187,7 @@ tile_data = PoolIntArray( -720885, 2, 65536, -655349, 2, 65536, -589813, 2, 6553
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 3872.77, 119.848 )
 scale = Vector2( 4.20001, 4.20001 )
+
+[node name="Death_by_fall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3489.96, 831.313 )
+scale = Vector2( 9.24, 1 )

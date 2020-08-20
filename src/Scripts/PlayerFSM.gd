@@ -1,3 +1,5 @@
+#This is a class for player's state machine. It should be in a child node of player.
+
 extends StateMachine
 
 func _ready():
@@ -9,6 +11,7 @@ func _ready():
 	add_state("wall_jump")
 	call_deferred("set_state", states.run)
 	
+#Called when there is an input
 func _input(event):
 	#Jump
 	if [states.run].has(state):
@@ -21,13 +24,15 @@ func _input(event):
 		
 func _state_logic(delta):
 	if ![states.dead].has(state):
+		#If the player is not dead apply movement
 		parent._handle_move_input()
-		#parent._apply_gravity(delta)
 		parent._apply_movement()
 		
 	if [states.jump, states.fall, states.wall_jump].has(state):
+		#If player is jumping, falling or wall jumping - apply direction to "down" 
 		parent.direction.y = 1.0
 	
+#Used for transition between states
 func _get_transition(delta):
 	match state:
 		states.run:
@@ -43,7 +48,6 @@ func _get_transition(delta):
 				elif parent._velocity.y > 0:
 					return states.fall
 		states.jump:
-			#parent.direction.y = 1.0
 			if parent.is_dead:
 				return states.dead
 			elif parent.just_killed:
@@ -51,7 +55,6 @@ func _get_transition(delta):
 			elif parent.is_on_floor():
 				return states.run
 			elif parent.is_on_wall():
-				#parent._velocity = Vector2(0, -100)
 				parent.direction.y = -1.0
 				return states.wall_jump
 			elif parent._velocity.y >= 0:
@@ -83,8 +86,14 @@ func _get_transition(delta):
 			elif parent._velocity.y >= 0:
 				parent.is_wall_jump = false
 				return states.fall
+				
+		states.attack:
+			if parent.is_dead:
+				return states.dead
+			else:
+				return states.jump
 	return null
-	
+
 func _enter_state(new_state, old_state):
 	match new_state:
 		states.run:
@@ -96,7 +105,6 @@ func _enter_state(new_state, old_state):
 		states.wall_jump:
 			parent.is_wall_jump = true
 			parent.anim_player.play("Wall_jump")
-			#parent.direction.y = -1.0
 			print("Wall Jump")
 		states.fall:
 			parent.anim_player.play("Fall")

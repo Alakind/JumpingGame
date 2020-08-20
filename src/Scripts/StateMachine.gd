@@ -1,8 +1,12 @@
 extends Node
+
+#Abstract class state machine 
 class_name StateMachine
 
 var state = null setget set_state
 var previous_state = null
+
+#Array with every state
 var states = {}
 
 onready var parent = get_parent()
