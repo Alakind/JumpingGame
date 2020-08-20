@@ -28,7 +28,4 @@ func OnButtonAreaExited(body):
 
 
 func _on_TextureButton_pressed() -> void:
-	if (get_tree().paused == false):
-		get_tree().paused = true
-	elif (get_tree().paused == true):
-		get_tree().paused = false
+	get_tree().paused = not get_tree().paused

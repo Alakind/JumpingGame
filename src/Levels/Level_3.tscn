@@ -21,9 +21,15 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 256, 0, 256 )
 0/autotile/spacing = 0
 0/autotile/occluder_map = [  ]
 0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -43,9 +49,14 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 256, 0, 256 )
 1/autotile/spacing = 0
 1/autotile/occluder_map = [  ]
 1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
 1/autotile/z_index_map = [  ]
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tileset_new.png 2"
@@ -100,9 +111,14 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 1/autotile/spacing = 0
 1/autotile/occluder_map = [  ]
 1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
 1/autotile/z_index_map = [  ]
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "tilesett.png 2"
@@ -116,9 +132,15 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 2/autotile/spacing = 0
 2/autotile/occluder_map = [  ]
 2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
 2/autotile/z_index_map = [  ]
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -171,6 +193,9 @@ margin_right = 1248.87
 margin_bottom = 355.783
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Interactables" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -189,11 +214,3 @@ cell_size = Vector2( 128, 128 )
 format = 1
 tile_data = PoolIntArray( -196598, 2, 65536, -131062, 2, 65536, -1, 2, 65536, -65531, 2, 65537, -65530, 2, 65537, -65529, 2, 65537, -65526, 2, 65536, -65525, 2, 65537, -65524, 2, 65537, -65523, 2, 65537, -65522, 2, 65537, -65521, 2, 65537, -65520, 2, 65537, -65519, 2, 65537, -65518, 2, 65537, -65517, 2, 65536, 65535, 2, 65536, 131071, 2, 65536, 131072, 2, 0, 131073, 2, 1, 131074, 2, 1, 131075, 2, 1, 131076, 2, 1, 131077, 2, 1, 131078, 2, 1, 131079, 2, 1, 131080, 2, 1, 131081, 2, 1, 131082, 2, 1, 131083, 2, 1, 131084, 2, 1, 131085, 2, 1, 131086, 2, 1, 131087, 2, 1, 131088, 2, 1, 131089, 2, 1, 131090, 2, 1 )
 [connection signal="pressed" from="GUI/TextureButton" to="GUI" method="_on_TextureButton_pressed"]
-
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3872.77, 119.848 )
-scale = Vector2( 4.20001, 4.20001 )
-
-[node name="Death_by_fall" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3489.96, 831.313 )
-scale = Vector2( 9.24, 1 )
