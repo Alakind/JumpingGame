@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Menu/Background.png" type="Texture" id=1]
+[ext_resource path="res://src/Menu/vor.jpg" type="Texture" id=2]
+
+[node name="LevelSelect" type="Node"]
+
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( -11.2527, 0 )
+scale = Vector2( 0.13, 0.134 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="Buttons"]
+margin_left = 332.188
+margin_top = 20.5056
+margin_right = 1068.19
+margin_bottom = 798.506
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="Buttons"]
+margin_left = 342.372
+margin_top = 365.17
+margin_right = 405.372
+margin_bottom = 401.17
+rect_scale = Vector2( 10, 10 )
+text = "Shreks)))))"
