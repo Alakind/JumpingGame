@@ -14,6 +14,8 @@ func dead():
 	_velocity.x = 0
 	$AnimatedSprite.play("dead")
 	$CollisionShape2D.disabled = true
+	$Stomping_area/CollisionShape2D.disabled = true
+	$RayCast2D.enabled = false
 	$Timer.start()
 
 # Killing enemy by stomping
@@ -57,11 +59,7 @@ func _physics_process(delta):
 
 		if not is_attacking:
 			$AnimatedSprite.flip_h = direction == 1
-		music_node_steps.play()
-		
-		if !is_attacking:
 			$AnimatedSprite.play("run")
-	
 
 
 func _on_Timer_timeout() -> void:
