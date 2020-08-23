@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ContinueButtonSelected.jpg-6bcd8d0ee3a483ae40b88280bfb847c0.stex"
+path="res://.import/empty_button_3_pressed.png-ece00df7338ec4862d97207142459e90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Menu/ContinueButtonSelected.jpg"
-dest_files=[ "res://.import/ContinueButtonSelected.jpg-6bcd8d0ee3a483ae40b88280bfb847c0.stex" ]
+source_file="res://src/Menu/Sprites/empty_button_3_pressed.png"
+dest_files=[ "res://.import/empty_button_3_pressed.png-ece00df7338ec4862d97207142459e90.stex" ]
 
 [params]
 

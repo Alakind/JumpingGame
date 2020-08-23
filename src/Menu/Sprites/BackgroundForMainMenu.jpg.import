@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ContinueButton.jpg-46b045da65fc75d1377d7d260acfdc34.stex"
+path="res://.import/BackgroundForMainMenu.jpg-2f4ec0d4e5e4e2493d9a6e03981ce2ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Menu/ContinueButton.jpg"
-dest_files=[ "res://.import/ContinueButton.jpg-46b045da65fc75d1377d7d260acfdc34.stex" ]
+source_file="res://src/Menu/Sprites/BackgroundForMainMenu.jpg"
+dest_files=[ "res://.import/BackgroundForMainMenu.jpg-2f4ec0d4e5e4e2493d9a6e03981ce2ce.stex" ]
 
 [params]
 

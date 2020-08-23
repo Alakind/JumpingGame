@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ебать-ты-лох-оригинал.jpg-13e3b0a3e58d21846039dc25c8558799.stex"
+path="res://.import/pause_button.png-1fc90bb398197455b56d36a3062eb4f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Menu/ебать-ты-лох-оригинал.jpg"
-dest_files=[ "res://.import/ебать-ты-лох-оригинал.jpg-13e3b0a3e58d21846039dc25c8558799.stex" ]
+source_file="res://src/Menu/Sprites/pause_button.png"
+dest_files=[ "res://.import/pause_button.png-1fc90bb398197455b56d36a3062eb4f8.stex" ]
 
 [params]
 

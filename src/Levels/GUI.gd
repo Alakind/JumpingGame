@@ -26,7 +26,6 @@ func OnButtonAreaEntered(body, tile_import, tile_region_import, area_import_door
 func OnButtonAreaExited(body):
 	print("out")
 
-
 func _on_TextureButton_pressed() -> void:
 	get_tree().paused = not get_tree().paused
-	get_node("ColorRect").visible = get_tree().paused
+	get_node("MenuPausePopup").visible = get_tree().paused

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LevelsButtonSelected.jpg-811521fed183709680e2e026aa794227.stex"
+path="res://.import/empty_button_1.png-eb3f928d095a6eb2ec3afb89d3d7f9e2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Menu/LevelsButtonSelected.jpg"
-dest_files=[ "res://.import/LevelsButtonSelected.jpg-811521fed183709680e2e026aa794227.stex" ]
+source_file="res://src/Menu/Sprites/empty_button_1.png"
+dest_files=[ "res://.import/empty_button_1.png-eb3f928d095a6eb2ec3afb89d3d7f9e2.stex" ]
 
 [params]
 
